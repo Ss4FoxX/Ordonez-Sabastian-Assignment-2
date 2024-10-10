@@ -14,8 +14,8 @@ namespace Game10003
         //Opens and closes the ball.
         bool IsBallOpen = false;
 
-        int[] ArrayX = { 200, 400, 600, 200, 400, 600};
-        int[] ArrayY = { 250, 250, 250, 500, 500, 500};
+        int[] ArrayX = { 110, 200, 600, 200, 400, 600};
+        int[] ArrayY = { 110, 250, 250, 500, 500, 500};
 
         /// <summary>
         ///     Setup runs once before the game loop begins.
@@ -25,6 +25,11 @@ namespace Game10003
             Window.SetSize(800, 600);
             Window.SetTitle("Squares?");
 
+            //uses 2 writelines to make space from the boot up code stuff. other 2 are the rules
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("Use Certain keys on your keyboard (B, R, Y, V, G) to change the squares color!");
+            Console.WriteLine("Space and Clicking the leeft mouse button closes the ball, and turns any squares black");
 
         }
 
@@ -33,36 +38,11 @@ namespace Game10003
         /// </summary>
         public void Update()
         {
-
-            //Draw.Circle();
-
-
-            // Draws a ball
-
-            /*
-            Draw.LineColor = Color.Black;
-            Draw.LineSize = 5;
-            Draw.FillColor = Color.Red;
-            Draw.Circle(400, 400, 200);
-
-            Draw.LineColor = Color.Black;
-            Draw.LineSize = 15;
-            Draw.Line(207, 400, 596, 400);
-
-            Draw.LineSize = 5;
-            Draw.FillColor = Color.Black;
-            Draw.Circle(400, 400, 50);
-
-            Draw.FillColor = Color.White;
-            Draw.Circle(400, 400, 25); */
-
-
-            // Checks if the ball is open or closed
+            Window.ClearBackground(Color.DarkGray);
             if (IsBallOpen == true)
             {
-                //int RandomX = ArrayX[Random.Integer(0, 5)];
-                //int RandomY = ArrayY[Random.Integer(0, 5)];
-                //If it is open, pressing a key will draw a different coloured square over the ball.
+
+                //If it is open, pressing a key will draw a coloured square over the ball.
                 if (Input.IsKeyboardKeyPressed(KeyboardInput.B))
                 {
                     Draw.FillColor = Color.Blue;
@@ -77,7 +57,7 @@ namespace Game10003
                     IsBallOpen = false;
                 }
 
-                Draw.Square(ArrayX, ArrayY, 200);
+                Draw.Square(ArrayX[0] /2, ArrayY[0] /2, 100);
             }
 
             // checks if the ball is closed
