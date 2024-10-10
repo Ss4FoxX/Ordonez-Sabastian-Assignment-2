@@ -6,20 +6,18 @@ using System.Numerics;
 // The namespace your code is in.
 namespace Game10003
 {
-    /// <summary>
+
     ///     Your game code goes inside this class!
-    /// </summary>
+
     public class Game
     { 
         //Opens and closes the ball.
         bool IsBallOpen = false;
 
-        int[] ArrayX = { 110, 200, 600, 200, 400, 600};
-        int[] ArrayY = { 110, 250, 250, 500, 500, 500};
+        int[] ArrayX = { 400, 700, 100, 100, 700};
+        int[] ArrayY = { 300, 500, 100, 500, 100};
 
-        /// <summary>
         ///     Setup runs once before the game loop begins.
-        /// </summary>
         public void Setup()
         {
             Window.SetSize(800, 600);
@@ -28,14 +26,12 @@ namespace Game10003
             //uses 2 writelines to make space from the boot up code stuff. other 2 are the rules
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("Use Certain keys on your keyboard (B, R, Y, V, G) to change the squares color!");
+            Console.WriteLine("Use Certain keys on your keyboard (B, R, Y, M, G) to change the squares color!");
             Console.WriteLine("Space and Clicking the leeft mouse button closes the ball, and turns any squares black");
 
         }
 
-        /// <summary>
         ///     Update runs every frame.
-        /// </summary>
         public void Update()
         {
             Window.ClearBackground(Color.DarkGray);
@@ -65,15 +61,17 @@ namespace Game10003
                 }
 
 
-                    //Draw.Square(ArrayX[0] / 2, ArrayY[0] / 2, 100);
+                    //Draw.Square(ArrayX[0] / 2, ArrayY[0] / 2, 100);  spare Ctrl C code
                     if (Input.IsMouseButtonPressed(MouseInput.Left) || Input.IsKeyboardKeyPressed(KeyboardInput.Space))
                 {
                     IsBallOpen = false;
                 }
-                    Draw.Square(ArrayX[0] / 2, ArrayY[0] / 2, 100);
-                
-
-
+                    //The Circles
+                Draw.Square(ArrayX[0] -50, ArrayY[0] -50, 100);
+                Draw.Square(ArrayX[1] -50, ArrayY[1] -50, 100);
+                Draw.Square(ArrayX[2] -50, ArrayY[2] -50, 100);
+                Draw.Square(ArrayX[3] -50, ArrayY[3] -50, 100);
+                Draw.Square(ArrayX[4] -50, ArrayY[4] -50, 100);
 
             }
 
@@ -95,9 +93,12 @@ namespace Game10003
                 Draw.LineSize = 5;
                 Draw.FillColor = Color.Black;
                 Draw.Circle(ArrayX[0], ArrayY[0], 50);
+                Draw.Circle(ArrayX[1], ArrayY[1], 100);
+                Draw.Circle(ArrayX[2], ArrayY[2], 100);
+                Draw.Circle(ArrayX[3], ArrayY[3], 100);
+                Draw.Circle(ArrayX[4], ArrayY[4], 100);
 
                 Draw.FillColor = Color.White;
-                Draw.Circle(ArrayX[0], ArrayY[0], 25);
 
                 if (Input.IsMouseButtonPressed(MouseInput.Left) || Input.IsKeyboardKeyPressed(KeyboardInput.Space))
                 {
