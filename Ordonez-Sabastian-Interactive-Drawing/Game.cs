@@ -51,13 +51,30 @@ namespace Game10003
                 {
                     Draw.FillColor = Color.Red;
                 }
+                else if (Input.IsKeyboardKeyPressed(KeyboardInput.Y))
+                {
+                    Draw.FillColor = Color.Yellow;
+                }
+                else if (Input.IsKeyboardKeyPressed(KeyboardInput.M))
+                {
+                    Draw.FillColor = Color.Magenta;
+                }
+                else if (Input.IsKeyboardKeyPressed(KeyboardInput.G))
+                {
+                    Draw.FillColor = Color.LightGray;
+                }
 
-                if (Input.IsMouseButtonPressed(MouseInput.Left) || Input.IsKeyboardKeyPressed(KeyboardInput.Space))
+
+                    //Draw.Square(ArrayX[0] / 2, ArrayY[0] / 2, 100);
+                    if (Input.IsMouseButtonPressed(MouseInput.Left) || Input.IsKeyboardKeyPressed(KeyboardInput.Space))
                 {
                     IsBallOpen = false;
                 }
+                    Draw.Square(ArrayX[0] / 2, ArrayY[0] / 2, 100);
+                
 
-                Draw.Square(ArrayX[0] /2, ArrayY[0] /2, 100);
+
+
             }
 
             // checks if the ball is closed
